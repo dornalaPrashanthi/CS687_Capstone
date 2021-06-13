@@ -1,0 +1,55 @@
+﻿@model ScreeningReports.Models.ScreeningCenter
+@{
+    ViewBag.Title = "ScreeningCenter";
+}
+
+<h2>ScreeningCenter Login</h2>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="widthdevice-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm("SCreenLogIn", "ScreeningCenter", FormMethod.Post)) //Action,Controller
+        {
+            <table>
+                <tr>
+                    <td></td>
+                    @*<td style="text-decoration:underline">App Name</td>*@
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.userName)</td>
+                    <td>@Html.EditorFor(m => m.userName)</td>
+                </tr>
+                <tr>
+                    <td style="color:red">@Html.ValidationMessageFor(m => m.userName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.password)</td>
+                    <td>@Html.EditorFor(m => m.password)</td>
+
+                </tr>
+                <tr>
+                    <td style="color:red">@Html.ValidationMessageFor(m => m.password)</td>
+                    <td colspan="2" style="color:red">
+                        <label class="field-validation-error">@Html.DisplayFor(m => m.SCenterLogInErrorMessage)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="submit" value="Login" /></td>
+                    <td><input type="reset" name="reset" value="Clear" /></td>
+                </tr>
+            </table>
+        }
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

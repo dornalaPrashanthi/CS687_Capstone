@@ -1,0 +1,82 @@
+﻿@model ScreeningReports.Models.User
+@{
+    ViewBag.Title = "LogInAction";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="widthdevice-width" />
+    <title>Display</title>
+</head>
+<body>
+    <h1>Display</h1>
+    <div id="display-div">
+        @using (Html.BeginForm())
+        {
+            <table width="30%" cellpadding="5" cellspacing="5" style="border:1px solid black;border-collapse:collapse;">
+                <tr>
+                    <td>@Html.DisplayNameFor(m => m.FirstName)</td>
+                    <td>@Html.DisplayFor(m => m.FirstName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(m => m.LastName)</td>
+                    <td>@Html.DisplayFor(m => m.LastName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(m => m.PassportNo)</td>
+                    <td>@Html.DisplayFor(m => m.PassportNo)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(m => m.PhoneNo)</td>
+                    <td>@Html.DisplayFor(m => m.PhoneNo)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(m => m.RegnDate)</td>
+                    <td>@Html.DisplayFor(m => m.RegnDate)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(m => m.RegnCenter)</td>
+                    <td>@Html.DisplayFor(m => m.RegnCenter)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(m => m.RegnState)</td>
+                    <td>@Html.DisplayFor(m => m.RegnState)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(m => m.RegnCountry)</td>
+                    <td>@Html.DisplayFor(m => m.RegnCountry)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(m => m.SampleType)</td>
+                    <td>@Html.DisplayFor(m => m.SampleType)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(m => m.SampleDate)</td>
+                    <td>@Html.DisplayFor(m => m.SampleDate)</td>
+                </tr>
+            </table>
+            <h3 style="color:red">Test Result</h3>
+            <table width="30%" cellpadding="5" cellspacing="5" style="border:1px solid black;border-collapse:collapse;">
+                <tr>
+                    <td>@Html.DisplayNameFor(m => m.ResultDate)</td>
+                    <td>@Html.DisplayFor(m => m.ResultDate)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(m => m.TestResult)</td>
+                    @if (Model.TestResult == "Negative  ")
+                    {
+                        <td style="color:green">@Html.DisplayFor(m => m.TestResult)</td>
+                    }
+                    else
+                    {
+                        <td style="color:red">@Html.DisplayFor(m => m.TestResult)</td>
+                    }
+
+                </tr>
+            </table>
+        }
+    </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+﻿@model ScreeningReports.Models.User
+@{
+    ViewBag.Title = "ReportCheck";
+}
+
+<h2>ReportCheck</h2>
+<html>
+<head>
+    <meta name="viewport" content="widthdevice-width" />
+    <title>ReportCheck</title>
+</head>
+<body>
+    <div id="ReportCheckView">
+        @using (Html.BeginForm("UserPassport", "LogIn"))
+        {
+        <table style="align-content:center">
+            <tr>
+                <td>@Html.LabelFor(m => m.PassportNo)</td>
+                <td>@Html.EditorFor(m => m.PassportNo)</td>
+            </tr>
+            <tr>
+                <td style="color:red">@Html.ValidationMessageFor(m => m.PassportNo)</td>
+                <td colspan="2" style="color:red">
+                    <label class="field-validation-error">@Html.DisplayFor(m => m.PassportErrorMessage)</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="Submit" /></td>
+                <td><input type="reset" name="reset" value="Clear" /></td>
+            </tr>
+        </table>
+        }
+    </div>
+</body>
+</html>
+
